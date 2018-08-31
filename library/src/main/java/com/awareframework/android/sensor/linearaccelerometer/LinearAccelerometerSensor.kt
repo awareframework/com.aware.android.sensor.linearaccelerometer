@@ -155,6 +155,7 @@ class LinearAccelerometerSensor : AwareSensor(), SensorEventListener {
 
         val device = LinearAccelerometerDevice().apply {
             deviceId = CONFIG.deviceId
+            label = CONFIG.label
             timestamp = System.currentTimeMillis()
 
             maxRange = sensor.maximumRange
@@ -205,9 +206,9 @@ class LinearAccelerometerSensor : AwareSensor(), SensorEventListener {
         }
 
         val data = LinearAccelerometerData().apply {
-            timestamp = currentTime
             deviceId = CONFIG.deviceId
             label = CONFIG.label
+            timestamp = currentTime
 
             x = event.values[0]
             y = event.values[1]
